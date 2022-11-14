@@ -3,8 +3,8 @@ class CreateClinics < ActiveRecord::Migration[5.2]
     create_table :clinics do |t|
       t.integer :number
       t.string :clinic_type
-      t.string :doc
-      t.text :data
+      t.integer :doctor_id
+      t.date :data
 
       t.timestamps
     end

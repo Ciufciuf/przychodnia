@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'image_processing'
 
+gem 'ransack'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

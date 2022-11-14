@@ -19,6 +19,9 @@ class ClinicsController < ApplicationController
   def create
       @clinic = Clinic.new(clinic_params)
       
+      p @clinic.valid?
+        puts @clinic.errors.full_messages
+
       if @clinic.save
         redirect_to @clinic
       else
@@ -45,7 +48,7 @@ class ClinicsController < ApplicationController
     
     private
       def clinic_params
-        params.require(:clinic).permit(:number, :clinic_type, :doc, :data, :image)
+        params.require(:clinic).permit(:number, :clinic_type, :doctor_id, :data, :image)
       end
     end
     

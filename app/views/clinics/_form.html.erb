@@ -28,13 +28,13 @@
   </p>
  
   <p>
-    <%= form.label :doc, "Wybierz lekarza:" %><br>
+    <%= form.label :doctor_id, "Wybierz lekarza:" %><br>
     <%= form.collection_select :doctor_id, Doctor.all, :id, :name %>
   </p>
 
   <p>
     <%= form.label :data, "Data powstania:" %><br>
-    <%= form.text_field :data %>
+    <%= form.date_select :data, start_year: 1900, end_year: Time.now.year %>
   </p>
  
   <p>

@@ -1,16 +1,23 @@
 class DoctorsController < ApplicationController
 
-    def index
-        @doctors = Doctor.all
-    end
+  def index
+    @doctors = Doctor.all
+    @q = Doctor.ransack(params[:q])
+    @wynik = @q.result
+  end
 
-    def show
-        @doctor = Doctor.find(params[:id])
-    end
+  def search
+    @q = Doctor.ransack(params[:q])
+    @wynik = @q.result
+  end
 
     def new
         @doctor = Doctor.new
     end
+
+    def show
+      @doctor = Doctor.find(params[:id])
+  end
 
     def edit
         @doctor = Doctor.find(params[:id])

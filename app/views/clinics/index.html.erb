@@ -15,12 +15,10 @@
       <td><%= image_tag clinic.image, :style => "width:200px; height:100px"%></td>
       <td><%= clinic.number %></td>
       <td><%= clinic.clinic_type %></td>
-      <td><%= clinic.doc %></td>
+      <td><%= clinic.doctor.name %></td>
       <td><%= link_to 'Pokaz', clinic_path(clinic) %></td>
       <td><%= link_to 'Edytuj', edit_clinic_path(clinic) %></td>
-      <td><%= link_to 'Usun', clinic_path(clinic),
-              method: :delete,
-              data: { confirm: 'Na pewno chcesz usunac?' } %></td>
+      <td><%= link_to 'Usun', clinic_path(clinic), method: :delete, data: { confirm: 'Na pewno chcesz usunac?' } %></td>
     </tr>
   <% end %>
 </table>

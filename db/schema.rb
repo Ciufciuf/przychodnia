@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 2022_11_14_090916) do
   create_table "clinics", force: :cascade do |t|
     t.integer "number"
     t.string "clinic_type"
-    t.string "doc"
-    t.text "data"
+    t.integer "doctor_id"
+    t.date "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
