@@ -34,6 +34,8 @@ gem 'image_processing'
 
 gem 'ransack'
 
+gem 'jquery-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

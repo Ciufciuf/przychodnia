@@ -14,4 +14,14 @@
   <%= @doctor.address %>
 </p>
 
-<%= link_to 'Powrot', doctors_path %>
+<p>
+  <strong>Przychodnie:</strong>
+  <% @clinic.each do |clinic| %>
+  <%= clinic.number %> |
+  <%end%>
+</p>
+
+
+  
+
+<%= link_to 'Powrot', doctors_path %> 

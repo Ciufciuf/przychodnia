@@ -7,8 +7,11 @@ class DoctorsController < ApplicationController
   end
 
   def search
-    @q = Doctor.ransack(params[:q])
-    @wynik = @q.result
+    @q = Doctor.ransack(params["q"])
+    puts @wynik = @q.result
+    puts @wynik.inspect
+    puts params[:q].class
+    puts params["q"].class
   end
 
     def new
@@ -17,6 +20,7 @@ class DoctorsController < ApplicationController
 
     def show
       @doctor = Doctor.find(params[:id])
+      @clinic = Clinic.where("doctor_id = ?", params[:id])
   end
 
     def edit

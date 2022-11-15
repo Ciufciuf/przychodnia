@@ -2,24 +2,8 @@
 
 <%= render 'doctors/form1' %>
 
+<div id="wynik">
 
-<table>
-  <thead>
-    <tr>
-      <th>Imie i nazwisko</th>
-      <th>Specjalizacja</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @wynik.each do |wynik| %>
-      <tr>
-        <td><%= wynik.name %></td>
-        <td><%= wynik.spec %></td>
-        <td><%= link_to 'Zobacz', wynik %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+</div>
 
 <%= link_to "Powrot", doctors_path %>

@@ -1,6 +1,18 @@
 <h1>Wyszukaj lekarza</h1>
 
-<%= search_form_for(@q, url: doctors_search_path, method: :get) do |f| %>
+<%= search_form_for(@q, url: doctors_search_path, method: :get, remote: true)  do |f| %>
     <%= f.search_field :name_cont, placeholder: "Wyszukaj" %>
-    <%= f.submit "Wyszukaj" %>
-  <% end %>
+    <%= f.submit "Wyszukaj", id: "test" %>
+<% end %>
+
+<script>
+$('#q_name_cont').keyup(function(){
+  $.ajax({
+    url: "/doctors/search",
+    type: "GET",
+    dataType: "script",
+    data: { q:  $("#q_name_cont").val() }
+  })
+})
+</script>
+

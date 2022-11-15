@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2022_11_14_090916) do
     t.string "name"
     t.string "spec"
     t.text "address"
+    t.integer "clinic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
